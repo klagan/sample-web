@@ -44,6 +44,8 @@ stages:
             inputs:
               command: restore
               projects: $(webProjects)
+              feedsToUse: config
+              nugetConfigPath: nuget.config
 
           - task: DotNetCoreCLI@2
             displayName: Build
