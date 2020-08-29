@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{50939D57-1C1C-4C65-9EAD-8230931E02EA}"
+ProjectSection(SolutionItems) = preProject
+	azure-pipelines.yml = azure-pipelines.yml
+	readme.md = readme.md
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B176D735-0F22-4F72-BAFC-F67A5670E8D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.ContentNegotiate", "Sample\Sample.ContentNegotiate\Sample.ContentNegotiate.csproj", "{A3D15C6F-EE45-453B-BE17-F1787F65A038}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3D15C6F-EE45-453B-BE17-F1787F65A038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D15C6F-EE45-453B-BE17-F1787F65A038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D15C6F-EE45-453B-BE17-F1787F65A038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D15C6F-EE45-453B-BE17-F1787F65A038}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A3D15C6F-EE45-453B-BE17-F1787F65A038} = {B176D735-0F22-4F72-BAFC-F67A5670E8D3}
+	EndGlobalSection
+EndGlobal

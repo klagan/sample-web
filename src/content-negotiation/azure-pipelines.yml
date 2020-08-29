@@ -1,0 +1,61 @@
+name: 1.0$(rev:.r)
+
+trigger:
+- master
+
+parameters:
+  - name: RestoreBuildProjects
+    type: string
+    default: '**/*.csproj'
+  - name: TestProjects
+    type: string
+    default: '**/*[Tt]ests/*.csproj'
+
+variables:
+  buildConfiguration: 'Release'
+  
+stages:
+  - stage: 'Build'
+    pool:
+      vmImage: 'ubuntu-latest'
+    jobs:
+      - job: 'Build'
+        steps:
+        - script: |
+            echo ${{ parameters.RestoreBuildProjects }}
+            ls -R
+          displayName: 'Run a multi-line script'
+        - task: DotNetCoreCLI@2
+          displayName: Restore
+          inputs:
+            command: restore
+            projects: ${{ parameters.RestoreBuildProjects }}
+  
+        - task: DotNetCoreCLI@2
+          displayName: Build
+          inputs:
+            projects: ${{ parameters.RestoreBuildProjects }}
+            arguments: '--configuration $(BuildConfiguration)'
+  
+        - task: DotNetCoreCLI@2
+          displayName: Test
+          inputs:
+            command: test
+            projects: ${{ parameters.TestProjects }}
+            arguments: '--configuration $(BuildConfiguration)'
+  
+        - task: DotNetCoreCLI@2
+          displayName: Publish
+          inputs:
+            command: publish
+            publishWebProjects: True
+            arguments: '--configuration $(BuildConfiguration) --output $(build.ArtifactStagingDirectory)'
+            zipAfterPublish: True
+  
+        - task: PublishBuildArtifacts@1
+          displayName: 'Publish Artifact'
+          inputs:
+            PathtoPublish: '$(build.ArtifactStagingDirectory)'
+            ArtifactName: website
+            condition: succeededOrFailed()
+

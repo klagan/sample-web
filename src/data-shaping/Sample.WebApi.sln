@@ -4,12 +4,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{78E57EE2-9BF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{95558FC4-6673-4676-9FFD-4D2481C3C1D8}"
 ProjectSection(SolutionItems) = preProject
-	readme.me = readme.me
-	.gitignore = .gitignore
 	azure-pipelines.yml = azure-pipelines.yml
+	nuget.config = nuget.config
+	.gitignore = .gitignore
 EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.WebApi.Shaping", "src\Sample.WebApi.Shaping\Sample.WebApi.Shaping.csproj", "{BE0394F3-616D-4EA9-AE6A-A985F14F35C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.WebApi.Shaping", "Sample.WebApi.Shaping.csproj", "{EE012673-60B2-41E8-996D-D9F8FA752239}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +17,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE0394F3-616D-4EA9-AE6A-A985F14F35C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE0394F3-616D-4EA9-AE6A-A985F14F35C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE0394F3-616D-4EA9-AE6A-A985F14F35C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE0394F3-616D-4EA9-AE6A-A985F14F35C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE012673-60B2-41E8-996D-D9F8FA752239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE012673-60B2-41E8-996D-D9F8FA752239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE012673-60B2-41E8-996D-D9F8FA752239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE012673-60B2-41E8-996D-D9F8FA752239}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BE0394F3-616D-4EA9-AE6A-A985F14F35C4} = {78E57EE2-9BFB-4323-9117-0482E817CADA}
+		{EE012673-60B2-41E8-996D-D9F8FA752239} = {78E57EE2-9BFB-4323-9117-0482E817CADA}
 	EndGlobalSection
 EndGlobal
