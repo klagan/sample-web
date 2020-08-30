@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Sample.Api
 {
+    using Microsoft.Extensions.DependencyInjection;
+
     public class Program
     {
         public static void Main(
@@ -22,6 +24,17 @@ namespace Sample.Api
             string[] args
         ) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+                .ConfigureLogging(builder =>
+                {
+                    var configuration = builder.Services.BuildServiceProvider().GetRequiredService<IConfiguration>();
+
+                    builder.AddConfiguration(configuration.GetSection("Logging"));
+                    builder.AddConsole(options => options.IncludeScopes = true);
+                    builder.AddDebug();
+                })
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }

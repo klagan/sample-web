@@ -13,6 +13,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Sample.Api
 {
+    using System.IO;
+    using System.Reflection;
+    using Sample.Api.Middleware;
+
     public class Startup
     {
         public Startup(
@@ -47,9 +51,21 @@ namespace Sample.Api
 
             app.UseRouting();
 
+            app.UseRequestResponseLogger();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
+
+        // private static string XmlCommentsFilePath
+        // {
+        //     get
+        //     {
+        //         var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+        //         var fileName = typeof(Startup).GetTypeInfo().Assembly.GetName().Name + ".xml";
+        //         return Path.Combine(basePath, fileName);
+        //     }
+        // }
     }
 }

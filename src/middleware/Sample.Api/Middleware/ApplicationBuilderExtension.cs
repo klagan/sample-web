@@ -1,10 +1,10 @@
-namespace Sample.WebApi.Middleware
+namespace Sample.Api.Middleware
 {
     using Microsoft.AspNetCore.Builder;
 
     public static class ApplicationBuilderExtension
     {
-        public static IApplicationBuilder AddRequestResponseLogger(
+        public static IApplicationBuilder UseRequestResponseLogger(
             this IApplicationBuilder app
         )
         {
